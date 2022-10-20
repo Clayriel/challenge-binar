@@ -1,0 +1,861 @@
+{
+  "info": {
+    "_postman_id": "fc7e165c-8825-4025-859a-fedebfdb0417",
+    "name": "Dokumentasi RESTful API Challenge-04",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "23662998"
+  },
+  "item": [
+    {
+      "name": "Create User - auth",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"clayriel@gmail.com\",\"username\":\"clayriel\",\"password\":\"root\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/auth",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["auth"]
+        }
+      },
+      "response": [
+        {
+          "name": "Create User - auth",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"clayrish@gmail.com\",\r\n    \"username\": \"clayrish\",\r\n    \"password\": \"root\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/auth",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["auth"]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "101"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"65-4kaU0+APFaxsjIe0bSHWmg6qt5I\""
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 06 Oct 2022 17:38:36 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": true,\n    \"message\": \"User Created!\",\n    \"data\": {\n        \"email\": \"clayrish@gmail.com\",\n        \"username\": \"clayrish\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Login - auth",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"clayriel@gmail.com\",\"password\":\"root\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/auth/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["auth", "login"]
+        }
+      },
+      "response": [
+        {
+          "name": "Login - auth",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"clayrish@gmail.com\",\r\n    \"password\": \"root\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/auth/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["auth", "login"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "244"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"f4-BO0GlVa4wMASw5A1oBHUz+8DFSs\""
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 06 Oct 2022 17:39:06 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": true,\n    \"message\": \"Success Login\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZW1haWwiOiJjbGF5cmlzaEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNsYXlyaXNoIiwiaWF0IjoxNjY1MDc3OTQ2fQ.8Sxiw9Ib_XEGxVlARvB2TQFJga4zqz6pwF2eiyyBy7Y\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Create User Bio - UserBio",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJjbGF5cmllbEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNsYXlyaWVsIiwiaWF0IjoxNjY1MDcwMDYxfQ    .dxfOV4gU58GrfL8BxueHOm27ZEH9L0jbWmVQPO_sboQ"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"bio\":\"ini bio Clayriel\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/userBio",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["userBio"]
+        }
+      },
+      "response": [
+        {
+          "name": "Create User Bio - UserBio",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZW1haWwiOiJjbGF5cmlzaEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNsYXlyaXNoIiwiaWF0IjoxNjY1MDc3OTQ2fQ.8Sxiw9Ib_XEGxVlARvB2TQFJga4zqz6pwF2eiyyBy7Y"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"bio\":\"Clayrish top global ayodance mobile :)) \"}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/userBio",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["userBio"]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "217"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"d9-feC/YGoQvMr14MjJR7Re8j3sG+U\""
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 06 Oct 2022 17:39:49 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": true,\n    \"message\": \"Bio Created!\",\n    \"data\": {\n        \"id\": 5,\n        \"username\": \"clayrish\",\n        \"bio\": \"Clayrish top global ayodance mobile :)) \",\n        \"user_id\": 7,\n        \"updatedAt\": \"2022-10-06T17:39:49.820Z\",\n        \"createdAt\": \"2022-10-06T17:39:49.820Z\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get User Bio - UserBio",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJjbGF5cmllbEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNsYXlyaWVsIiwiaWF0IjoxNjY1MDcwMDYxfQ    .dxfOV4gU58GrfL8BxueHOm27ZEH9L0jbWmVQPO_sboQ"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/userBio/4",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["userBio", "4"]
+        }
+      },
+      "response": [
+        {
+          "name": "Get User Bio - UserBio",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZW1haWwiOiJjbGF5cmlzaEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNsYXlyaXNoIiwiaWF0IjoxNjY1MDc3OTQ2fQ.8Sxiw9Ib_XEGxVlARvB2TQFJga4zqz6pwF2eiyyBy7Y"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/userBio/5",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["userBio", "5"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "221"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"dd-CCuD8NSvSXlfAXoMvvgEc2I5v5I\""
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 06 Oct 2022 17:40:12 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": true,\n    \"message\": \"Success Get Data\",\n    \"data\": {\n        \"id\": 5,\n        \"username\": \"clayrish\",\n        \"bio\": \"Clayrish top global ayodance mobile :)) \",\n        \"user_id\": 7,\n        \"createdAt\": \"2022-10-06T17:39:49.820Z\",\n        \"updatedAt\": \"2022-10-06T17:39:49.820Z\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get All Bio - UserBio",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/userBio/all",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["userBio", "all"]
+        }
+      },
+      "response": [
+        {
+          "name": "Get All Bio - UserBio",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZW1haWwiOiJjbGF5cmlzaEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNsYXlyaXNoIiwiaWF0IjoxNjY1MDc3OTQ2fQ.8Sxiw9Ib_XEGxVlARvB2TQFJga4zqz6pwF2eiyyBy7Y",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/userBio/all",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["userBio", "all"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "528"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"210-f1dvM79PMDjFF6wGjU6wPR1pZRU\""
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 06 Oct 2022 17:40:52 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": true,\n    \"message\": \"Success Get All Data\",\n    \"data\": [\n        {\n            \"id\": 3,\n            \"username\": \"admin\",\n            \"bio\": \"ini setelah di update\",\n            \"user_id\": 3,\n            \"createdAt\": \"2022-10-06T13:41:43.977Z\",\n            \"updatedAt\": \"2022-10-06T13:48:20.229Z\"\n        },\n        {\n            \"id\": 4,\n            \"username\": \"len@gmail.com\",\n            \"bio\": \"ini akun punya Len\",\n            \"user_id\": 5,\n            \"createdAt\": \"2022-10-06T17:19:26.288Z\",\n            \"updatedAt\": \"2022-10-06T17:19:26.288Z\"\n        },\n        {\n            \"id\": 5,\n            \"username\": \"clayrish\",\n            \"bio\": \"Clayrish top global ayodance mobile :)) \",\n            \"user_id\": 7,\n            \"createdAt\": \"2022-10-06T17:39:49.820Z\",\n            \"updatedAt\": \"2022-10-06T17:39:49.820Z\"\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Update User Bio - UserBio",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJjbGF5cmllbEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNsYXlyaWVsIiwiaWF0IjoxNjY1MDcwMDYxfQ    .dxfOV4gU58GrfL8BxueHOm27ZEH9L0jbWmVQPO_sboQ"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"bio\":\"ini bio Clayriel setelah jadi top global :)) \"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/userBio/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["userBio", ""]
+        }
+      },
+      "response": [
+        {
+          "name": "Update User Bio - UserBio",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZW1haWwiOiJjbGF5cmlzaEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNsYXlyaXNoIiwiaWF0IjoxNjY1MDc3OTQ2fQ.8Sxiw9Ib_XEGxVlARvB2TQFJga4zqz6pwF2eiyyBy7Y"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"bio\": \"Clayrish gamain lagi gais :') \"}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/userBio/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["userBio", ""]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "109"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"6d-nn/lkY7toCBJ3emaPsJA8wdMicU\""
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 06 Oct 2022 17:42:09 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": true,\n    \"message\": \"Bio Updated\",\n    \"data\": {\n        \"username\": \"clayrish\",\n        \"bio\": \"Clayrish gamain lagi gais :') \"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Delete User Bio - UserBio",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJjbGF5cmllbEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNsYXlyaWVsIiwiaWF0IjoxNjY1MDcwMDYxfQ    .dxfOV4gU58GrfL8BxueHOm27ZEH9L0jbWmVQPO_sboQ"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/userBio",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["userBio"]
+        }
+      },
+      "response": [
+        {
+          "name": "Delete User Bio - UserBio",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjY1MDc4MzMwfQ.rFwMty4vJmwBd0qtZ26GaliVi7XuKdjNL1opEUKn7jQ"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/userBio",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["userBio"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "50"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"32-JuNDvUgIwLEKiflLCYGRZ4tb9lc\""
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 06 Oct 2022 17:45:42 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": true,\n    \"message\": \"Data Deleted!\",\n    \"data\": 1\n}"
+        }
+      ]
+    },
+    {
+      "name": "Create User History - UserHistory",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJjbGF5cmllbEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNsYXlyaWVsIiwiaWF0IjoxNjY1MDcwMDYxfQ    .dxfOV4gU58GrfL8BxueHOm27ZEH9L0jbWmVQPO_sboQ"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"score\":100000}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/history",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["history"]
+        }
+      },
+      "response": [
+        {
+          "name": "Create User History - UserHistory",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZW1haWwiOiJjbGF5cmlzaEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNsYXlyaXNoIiwiaWF0IjoxNjY1MDc3OTQ2fQ.8Sxiw9Ib_XEGxVlARvB2TQFJga4zqz6pwF2eiyyBy7Y"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"score\":1000000}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/history",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["history"]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "184"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"b8-TDaj0J2kZVtnnHVzlKx+KWTGo0c\""
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 06 Oct 2022 17:42:58 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": true,\n    \"message\": \"Score Added!\",\n    \"data\": {\n        \"id\": 5,\n        \"username\": \"clayrish\",\n        \"score\": 1000000,\n        \"user_id\": 7,\n        \"updatedAt\": \"2022-10-06T17:42:58.091Z\",\n        \"createdAt\": \"2022-10-06T17:42:58.091Z\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get User History - UserHistory",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJjbGF5cmllbEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNsYXlyaWVsIiwiaWF0IjoxNjY1MDcwMDYxfQ    .dxfOV4gU58GrfL8BxueHOm27ZEH9L0jbWmVQPO_sboQ"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/history/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["history", "1"]
+        }
+      },
+      "response": [
+        {
+          "name": "Get User History - UserHistory",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJjbGF5cmllbEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNsYXlyaWVsIiwiaWF0IjoxNjY1MDcwMDYxfQ    .dxfOV4gU58GrfL8BxueHOm27ZEH9L0jbWmVQPO_sboQ"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/history/7",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["history", "7"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "195"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"c3-NTv2QOyFlV877PQy3ajjbMET17s\""
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 06 Oct 2022 17:43:41 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": true,\n    \"message\": \"Succes get user history\",\n    \"data\": {\n        \"id\": 5,\n        \"username\": \"clayrish\",\n        \"score\": 1000000,\n        \"user_id\": 7,\n        \"createdAt\": \"2022-10-06T17:42:58.091Z\",\n        \"updatedAt\": \"2022-10-06T17:42:58.091Z\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get All User History - UserHistory",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJjbGF5cmllbEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNsYXlyaWVsIiwiaWF0IjoxNjY1MDcwMDYxfQ    .dxfOV4gU58GrfL8BxueHOm27ZEH9L0jbWmVQPO_sboQ"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/history/all",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["history", "all"]
+        }
+      },
+      "response": [
+        {
+          "name": "Get All User History - UserHistory",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJjbGF5cmllbEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNsYXlyaWVsIiwiaWF0IjoxNjY1MDcwMDYxfQ    .dxfOV4gU58GrfL8BxueHOm27ZEH9L0jbWmVQPO_sboQ"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/history/all",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["history", "all"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "755"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"2f3-rMSgZYejdIzRIe8zHe2XWLsUcsA\""
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 06 Oct 2022 17:43:53 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": true,\n    \"message\": \"success get all user Score\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"username\": \"clayriel\",\n            \"score\": 2000,\n            \"user_id\": 4,\n            \"createdAt\": \"2022-10-06T14:10:47.852Z\",\n            \"updatedAt\": \"2022-10-06T14:10:47.852Z\"\n        },\n        {\n            \"id\": 2,\n            \"username\": \"len@gmail.com\",\n            \"score\": 500000,\n            \"user_id\": 5,\n            \"createdAt\": \"2022-10-06T17:21:49.786Z\",\n            \"updatedAt\": \"2022-10-06T17:21:49.786Z\"\n        },\n        {\n            \"id\": 3,\n            \"username\": \"len@gmail.com\",\n            \"score\": 2000,\n            \"user_id\": 5,\n            \"createdAt\": \"2022-10-06T17:27:06.481Z\",\n            \"updatedAt\": \"2022-10-06T17:27:06.481Z\"\n        },\n        {\n            \"id\": 4,\n            \"username\": \"len@gmail.com\",\n            \"score\": 950000,\n            \"user_id\": 5,\n            \"createdAt\": \"2022-10-06T17:27:17.349Z\",\n            \"updatedAt\": \"2022-10-06T17:27:17.349Z\"\n        },\n        {\n            \"id\": 5,\n            \"username\": \"clayrish\",\n            \"score\": 1000000,\n            \"user_id\": 7,\n            \"createdAt\": \"2022-10-06T17:42:58.091Z\",\n            \"updatedAt\": \"2022-10-06T17:42:58.091Z\"\n        }\n    ]\n}"
+        }
+      ]
+    }
+  ]
+}
