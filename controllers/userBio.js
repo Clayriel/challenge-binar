@@ -46,7 +46,7 @@ module.exports = {
         });
       }
 
-      const updateBio = await UserBio.update(
+      await UserBio.update(
         {
           bio: bio,
         },
