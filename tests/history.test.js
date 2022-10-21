@@ -33,7 +33,7 @@ describe.skip("GET /test/history/all", () => {
   });
 });
 
-//get user history
+//get user history -
 describe.only("GET /test/history/4", () => {
   it("Should get data", async () => {
     await request(app)
