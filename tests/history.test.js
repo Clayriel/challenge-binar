@@ -30,7 +30,7 @@ describe("GET /test/history/all", () => {
 });
 
 //get user history
-describe.only("GET /test/history/4", () => {
+describe.skip("GET /test/history/4", () => {
   it("Should get data", async () => {
     const res = await request(app)
       .get("/test/history/4")
