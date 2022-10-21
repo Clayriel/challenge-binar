@@ -14,7 +14,7 @@ describe.skip("GET /test/userBio", () => {
   });
 });
 
-//create user bio
+//create user bio -
 describe.skip("POST /test/userBio/add", () => {
   it("Should create data", async () => {
     const username = "akuntuyul";
